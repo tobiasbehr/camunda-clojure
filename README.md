@@ -15,14 +15,16 @@ qualified class name of the delegate and set this as the Java Class for the `Ser
 Clojure doesn't generate class files out of the box. But fortunately we can use the `gen-class' function to accomplish that
 (also refer to the `camunda-clojure.delegates` namespace):
 
-```(gen-class
+```
+(gen-class
  :name camunda_clojure.delegates.MyDelegate
  :prefix delegate-
  :implements [org.camunda.bpm.engine.delegate.JavaDelegate])
 
 (defn delegate-execute [this execution]
   (let [variable (.getVariable execution "var1")]
-    (println "This is the delegate for var1=" variable)))```
+    (println "This is the delegate for var1=" variable)))
+```
 
 To eventually have the class generated, we need to call the `compile` function for the namespace which holds the delegate 
 definition:
