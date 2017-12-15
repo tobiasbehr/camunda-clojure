@@ -9,6 +9,11 @@ As of now I only implemented some basic wrappers around commonly used Camunda ca
 query tasks and complete them. When retrieving data from the Camunda engine the results will be mapped to Clojure data
 structures (immutable maps) so that further processing in the Clojure code is convenient.
 
+## Structure
+Currently the `camunda-clojure.core` and `camunda-clojure.delegates` namespaces mime the process application while the other namespaces provide the Camunda
+wrapper which can be used by the process application. If this prototype turns out to be interesting for anybody, this could
+be extracted as a library.
+
 ## How to implement delegates
 One tricky part is to wire together the BPMN process models with the code artifacts. This can be done by using the fully
 qualified class name of the delegate and set this as the Java Class for the `Service Task` in the Camunda Modeler. However,
@@ -29,12 +34,7 @@ Clojure doesn't generate class files out of the box. But fortunately we can use 
 To eventually have the class generated, we need to call the `compile` function for the namespace which holds the delegate 
 definition:
 
-```(compile (symbol "camunda-clojure.core"))```
-
-## Structure
-Currently the `camunda-clojure.core` and `camunda-clojure.delegates` namespaces mime the process application while the other namespaces provide the Camunda
-wrapper which can be used by the process application. If this prototype turns out to be interesting for anybody, this could
-be extracted as a library.
+```(compile (symbol "camunda-clojure.delegates"))```
 
 ## How to run it
 
