@@ -1,4 +1,4 @@
-(defproject camunda-clojure "0.1.0-SNAPSHOT"
+(defproject camunda-clojure "0.1.0"
   :description "This is a prototype library to find out how it feels to develop Camunda process applications with Clojure"
   :url "https://github.com/tobiasbehr/camunda-clojure"
   :license {:name "Eclipse Public License"
