@@ -1,5 +1,7 @@
 # Camunda Clojure
 
+[![Clojars Project](https://img.shields.io/clojars/v/camunda-clojure.svg)](https://clojars.org/camunda-clojure)
+
 As I am currently working with Camunda BPM in a Java environment and I am also fascinated by the simplicity of 
 Clojure I wanted to find out how it might feel to develop process applications with Clojure. I did some research
 but didn't find anything about this so I started this prototype.
